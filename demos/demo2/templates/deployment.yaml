@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: demo2
+  name: {{ .Values.name }}
   namespace: demos
 spec:
-  replicas: 1
+  replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: demo2
+      app: {{ .Values.name }}
   template:
     metadata:
       labels:
-        app: demo2
+        app: {{ .Values.name }}
     spec:
       containers:
-      - name: demo2
+      - name: {{ .Values.name }}
         image: busybox
         command: ["sleep", "3600000"]

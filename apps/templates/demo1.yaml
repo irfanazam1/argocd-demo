@@ -10,6 +10,10 @@ spec:
     namespace: {{ .Values.namespace }}
     server: {{ .Values.spec.destination.server }}
   project: default
+  helm:
+    valueFiles:
+    - values/demos/values.yaml
+    - values/demos/demo1/values.yaml
   source:
     path: demos/demo1
     repoURL: https://github.com/irfanazam1/argocd-demo
