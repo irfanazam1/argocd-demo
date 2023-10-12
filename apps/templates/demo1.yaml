@@ -11,6 +11,6 @@ spec:
     server: {{ .Values.spec.destination.server }}
   project: default
   source:
-    path: demos/templates/demo1
+    path: demos
     repoURL: https://github.com/irfanazam1/argocd-demo
     targetRevision: HEAD
