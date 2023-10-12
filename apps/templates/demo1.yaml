@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: demo1
+  namespace: {{ .Values.namespace }}
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: {{ .Values.namespace }}
+    server: {{ .Values.spec.destination.server }}
+  project: default
+  source:
+    path: demos/templates/demo1
+    repoURL: https://github.com/irfanazam1/argocd-demo
+    targetRevision: HEAD
