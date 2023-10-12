@@ -16,5 +16,5 @@ spec:
     targetRevision: HEAD
     helm:
       valueFiles:
-      - values/demos/values.yaml
-      - values/demos/demo2/values.yaml
+      - ../../values/demos/values.yaml
+      - ../../values/demos/demo2/values.yaml
